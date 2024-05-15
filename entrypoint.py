@@ -103,6 +103,10 @@ file_base.mkdir(parents=True, exist_ok=True)
 
 shutil.copyfile(source_bin, dest_bin)
 
+source_bin = elf.with_name("firmware.bin")
+dest_bin = file_base / f"ota.bin"
+shutil.copyfile(source_bin, dest_bin)
+
 print("::endgroup::")
 
 if platform == "rp2040":
