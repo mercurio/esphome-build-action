@@ -51,7 +51,7 @@ runs:
         echo "data_dir=$data_dir" >> $GITHUB_OUTPUT
     - if: ${{ inputs.cache == 'true' }}
       name: Cache platformio directory
-      uses: actions/cache@v4.0.2
+      uses: actions/cache@v4.2.4
       with:
         path: ~/.platformio
         key: ${{ runner.os }}-esphome-${{ inputs.yaml_file }}-${{ inputs.version }}-platformio
