@@ -101,11 +101,12 @@ print("::endgroup::")
 print(f"::group::Copy firmware file(s) to folder {file_base}")
 file_base.mkdir(parents=True, exist_ok=True)
 
-print(f"Copying from {source_bin} to {dest_bin}")
-shutil.copyfile(source_bin, dest_bin)
+print(f"Not Copying from {source_bin} to {dest_bin}")
+#shutil.copyfile(source_bin, dest_bin)
 
 source_bin = elf.with_name("firmware.bin")
 dest_bin = file_base / f"ota.bin"
+print(f"Copying from {source_bin} to {dest_bin}")
 shutil.copyfile(source_bin, dest_bin)
 
 print("::endgroup::")
