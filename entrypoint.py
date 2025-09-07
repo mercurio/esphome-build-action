@@ -98,9 +98,10 @@ else:
     dest_bin = file_base / f"{name}.bin"
 print("::endgroup::")
 
-print("::group::Copy firmware file(s) to folder")
+print(f"::group::Copy firmware file(s) to folder {file_base}")
 file_base.mkdir(parents=True, exist_ok=True)
 
+print(f"Copying from {source_bin} to {dest_bin}")
 shutil.copyfile(source_bin, dest_bin)
 
 source_bin = elf.with_name("firmware.bin")
